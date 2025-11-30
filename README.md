@@ -111,4 +111,4 @@ Then run:
 
 ## License
 
-MIT License © 2025 Dennis aka Den7 (Klaipedaville)
+MIT License Â© 2025 Dennis aka Den7 (Klaipedaville)
