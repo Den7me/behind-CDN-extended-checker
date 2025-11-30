@@ -50,7 +50,7 @@ Make the script executable:
 
 ## Usage
 
-?? **Important Development Notice (Work in Progress)**
+:warning: **Important Development Notice (Work in Progress)**
 
 CLI arguments and multi-domain support are currently being developed (finishing touches).
 > Until the next release, please edit the `url="https://example.com"` variable directly inside the script.
@@ -77,12 +77,13 @@ Then run:
         ./cdn-origin-check.sh "$url"
     done
 
-## Example Output
+## Example Output:
 
-| PROTO | DNS | WEB | IPv4 (CODE)          | IPv6 (CODE) | CDN             |
+| PROTO | DNS | WEB | IPv4 (CODE)           | IPv6 (CODE) | CDN               |
 |-------|-----|-----|----------------------|-------------|-----------------|
-| HTTP  | ?  | ?  | 198.51.100.10 (200)  | N/A         | No CDN (Apache)  |
-| HTTPS | ?  | ?  | 198.51.100.10 (403)  | N/A         | No CDN ()        |
+| HTTP  | :heavy_check_mark:  | :heavy_check_mark:  | 198.51.100.10 (200)  | N/A         | No CDN (Apache)  |
+| HTTPS | :heavy_check_mark:  | :x:  | 198.51.100.10 (403)  | N/A         | No CDN ()        |
+
 
 ## Origin / Direct IP Checks
 
