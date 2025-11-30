@@ -3,7 +3,6 @@
 ![Bash](https://img.shields.io/badge/Bash-Yes-green)
 ![License](https://img.shields.io/github/license/Den7me/behind-CDN-extended-checker)
 ![Last Commit](https://img.shields.io/github/last-commit/Den7me/behind-CDN-extended-checker/main)
-[![Open in Codespaces](https://img.shields.io/badge/Open%20in-Codespaces-blue?logo=github)](https://github.com/codespaces/new?repo=Den7me/behind-CDN-extended-checker)
 [![Open in Gitpod](https://img.shields.io/badge/Open%20in-Gitpod-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Den7me/behind-CDN-extended-checker)
 
 A Bash script to check if a website is behind a CDN (Content Delivery Network) and retrieve origin server information. This script detects if a website is using popular CDNs such as Cloudflare, Akamai, Fastly, CloudFront, StackPath, KeyCDN, Incapsula, Google Cloud CDN, Azure CDN, BunnyCDN, CDN77, and CacheFly. It fetches IPv4 and IPv6 addresses, checks HTTP/HTTPS response codes directly and via origin, retrieves SSL certificate details (CN, SAN, issuer), shows hostname and organization info for the origin IP, and detects EPP domain status.
