@@ -102,4 +102,4 @@ Then run:
 
 ## License
 
-MIT License Â© 2025 Dennis aka Den7 (Klaipedaville)
+MIT License � 2025 Dennis aka Den7 (Klaipedaville)
