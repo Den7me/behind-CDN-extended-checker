@@ -56,9 +56,9 @@ Make the script executable:
 
 ### Option 2: Edit the script manually
 
-Edit the first line of `checker.sh`:
+Edit the line in the beginning of `checker.sh`:
 
-    url="https://example.com"
+    urls=("https://example.com")
 
 Then run:
 
@@ -66,7 +66,7 @@ Then run:
 
 ### Option 3: Check multiple domains in a loop. It may take a tiny bit longer to run.
 
-    ./checker.sh https://example.com  https://example2.com  https://example3.com
+    ./checker.sh  https://example.com https://example2.com https://example3.com
  
 ## Example Output:
 
