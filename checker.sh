@@ -12,9 +12,22 @@
 # INPUT
 # -------------------------
 
-url="https://ultahost.com"
-d=${url#*://}
-d=${d%%/*}
+# If arguments were passed → use them
+# If nothing passed → default to ultahost.com
+if [ "$#" -gt 0 ]; then
+  urls=("$@")
+else
+  urls=("https://ultahost.com")
+fi
+
+# Loop through all URLs (single or many)
+for url in "${urls[@]}"; do
+    echo -e "\n========================"
+    echo "Processing: $url"
+    echo "========================"
+
+    d=${url#*://}
+    d=${d%%/*}
 
 # -------------------------
 # DNS LOOKUPS
@@ -83,7 +96,7 @@ for proto in http https; do
   fi
 
   codes[$proto]="$c"
-  web[$proto]="$([ "$c" != "N/A" ] && echo '?' || echo '?')"
+  web[$proto]="$([ "$c" != "N/A" ] && echo '✅' || echo '❌')"
 done
 
 # -------------------------
@@ -96,8 +109,8 @@ maxc=${#cdns[http]}; (( ${#cdns[https]} > maxc )) && maxc=${#cdns[https]}
 
 printf "%s\n" "$(printf '%-6s' 'PROTO') |$(printf '%-3s' 'DNS') |$(printf '%-3s' 'WEB') | $(printf '%-*s' "$max4" 'IPv4 (CODE)') | $(printf '%-*s' "$max6" 'IPv6 (CODE)') | $(printf '%-*s' "$maxc" 'CDN')"
 
-dns_status="?"
-[ -n "$ipv4" ] || [ -n "$ipv6" ] && dns_status="?"
+dns_status="❌"
+[ -n "$ipv4" ] || [ -n "$ipv6" ] && dns_status="✅"
 
 for p in http https; do
   printf "%-6s | %-3s | %-3s | %-*s | %-*s | %-*s\n" \
@@ -186,3 +199,6 @@ case "$epp_status" in
 esac
 
 printf "EPP STATUS CODE: %s\n" "$epp_status"
+
+done
+
