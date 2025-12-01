@@ -46,37 +46,28 @@ Clone the repository:
 
 Make the script executable:
 
-    chmod +x cdn-origin-check.sh
+    chmod +x checker.sh
 
 ## Usage
 
-:warning: **Important Development Notice (Work in Progress)**
-
-CLI arguments and multi-domain support are currently being developed (finishing touches).
-> Until the next release, please edit the `url="https://example.com"` variable directly inside the script.
-> Enter the url you would like to check manually, for example `url="https://mydomain.com"`
-
 ### Option 1: Pass domain as a command-line argument
 
-    ./cdn-origin-check.sh https://example.com
+    ./checker.sh https://example.com
 
 ### Option 2: Edit the script manually
 
-Edit the first line of `cdn-origin-check.sh`:
+Edit the first line of `checker.sh`:
 
     url="https://example.com"
 
 Then run:
 
-    ./cdn-origin-check.sh
+    ./checker.sh
 
-### Option 3: Check multiple domains in a loop
+### Option 3: Check multiple domains in a loop. It may take a tiny bit longer to run.
 
-    urls=("https://example1.com" "https://example2.com")
-    for url in "${urls[@]}"; do
-        ./cdn-origin-check.sh "$url"
-    done
-
+    ./checker.sh https://example.com  https://example2.com  https://example3.com
+ 
 ## Example Output:
 
 | PROTO | DNS | WEB | IPv4 (CODE)           | IPv6 (CODE) | CDN               |
@@ -112,4 +103,4 @@ Then run:
 
 ## License
 
-MIT License © 2025 Dennis aka Den7 (Klaipedaville)
+MIT License Â© 2025 Dennis aka Den7 (Klaipedaville)
