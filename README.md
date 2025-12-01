@@ -70,11 +70,10 @@ Then run:
  
 ## Example Output:
 
-| PROTO | DNS | WEB | IPv4 (CODE)           | IPv6 (CODE) | CDN               |
-|-------|-----|-----|----------------------|-------------|-----------------|
-| HTTP  | :heavy_check_mark:  | :heavy_check_mark:  | 198.51.100.10 (200)  | N/A         | No CDN (Apache)  |
-| HTTPS | :heavy_check_mark:  | :x:  | 198.51.100.10 (403)  | N/A         | No CDN ()        |
-
+| PROTO | DNS | WEB | IPv4 (CODE)           | IPv6 (CODE)                  | CDN                                       |
+|-------|-----|-----|----------------------|------------------------------|-------------------------------------------|
+| HTTP  | :heavy_check_mark: | :heavy_check_mark: | 198.51.100.10 (301) | 2606:4700:20::681a:a5d (301) | Cloudflare (cloudflare, CF-RAY: 9a743e468f2913bc-IAD) |
+| HTTPS | :heavy_check_mark: | :heavy_check_mark: | 198.51.100.10 (200) | 2606:4700:20::681a:a5d (200) | Cloudflare (cloudflare, CF-RAY: 9a743e488885c97c-IAD) |
 
 ## Origin / Direct IP Checks
 
