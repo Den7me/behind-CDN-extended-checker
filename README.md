@@ -90,7 +90,7 @@ Then run:
     REGISTRAR: Example Registrar
     CREATION DATE: 2022-11-23
     EXPIRY DATE: 2026-11-23
-    EPP STATUS CODE: clientTransferProhibited / serverHold  (etc.)
+    EPP STATUS CODE: serverHold
     
 
 
@@ -103,6 +103,9 @@ Then run:
 - Ensure `jq` is installed to parse JSON from RDAP responses.  
 - If behind a CDN, direct origin IP checks may not return real origin IPs (expected).  
 - Output formatting may vary slightly depending on terminal font and width.  
+- It can be used by FBI and law enforcement provided full root whois access is authorized and granted.
+- ^ The above mentioned feature is not implemented for legal and security reasons.
+
 
 ## License
 
