@@ -89,8 +89,8 @@ Then run:
     NS: ns1.example.com. ns2.example.com.
     REGISTRAR: Example Registrar
     EPP STATUS CODE: clientTransferProhibited / serverHold  (etc.)
-    CREATION DATE: 2022-11-23T05
-    EXPIRY DATE: 2026-11-23T05
+    CREATION DATE: 2022-11-23
+    EXPIRY DATE: 2026-11-23
     EPP STATUS CODE: NONE
 
 
