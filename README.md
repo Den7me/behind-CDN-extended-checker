@@ -70,7 +70,7 @@ Then run:
  
 ## Example Output:
 
-| PROTO | DNS | WEB | IPv4 (CODE)           | IPv6 (CODE)                  | CDN                                       |
+| PROTO | DNS | WEB | IPv4                 | IPv6                         | CDN                                       |
 |-------|-----|-----|----------------------|------------------------------|-------------------------------------------|
 | HTTP  | :heavy_check_mark: | :heavy_check_mark: | 198.51.100.10 (301) | 2606:4700:20::681a:a5d (301) | Cloudflare (cloudflare, CF-RAY: 9a743e468f2913bc-IAD) |
 | HTTPS | :heavy_check_mark: | :heavy_check_mark: | 198.51.100.10 (200) | 2606:4700:20::681a:a5d (200) | Cloudflare (cloudflare, CF-RAY: 9a743e488885c97c-IAD) |
@@ -88,7 +88,11 @@ Then run:
 
     NS: ns1.example.com. ns2.example.com.
     REGISTRAR: Example Registrar
-    EPP STATUS CODE: clientTransferProhibited
+    EPP STATUS CODE: clientTransferProhibited / serverHold  (etc.)
+    CREATION DATE: 2022-11-23T05
+    EXPIRY DATE: 2026-11-23T05
+    EPP STATUS CODE: NONE
+
 
 ## Notes
 
@@ -102,4 +106,4 @@ Then run:
 
 ## License
 
-MIT License © 2025 Dennis aka Den7 (Klaipedaville)
+MIT License Â© 2025 Dennis aka Den7 (Klaipedaville)
