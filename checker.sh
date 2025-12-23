@@ -52,6 +52,24 @@ spinner() {
     printf "\r\033[2K\n" >&2
 }
 
+# Format date to human-readable form
+format_date() {
+    local d="$1"
+    if [[ -n "$d" ]]; then
+        # Normalize missing time / Z
+        if [[ "$d" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}$ ]]; then
+            d="${d}:00:00Z"
+        elif [[ "$d" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+            d="${d}T00:00:00Z"
+        fi
+        # Convert to human-readable
+        formatted=$(date -d "$d" +"%b-%d-%Y" 2>/dev/null)
+        echo "${formatted:-$d}"
+    else
+        echo "not exposed / restricted"
+    fi
+}
+
 # Single domain scan (sequential, stable)
 scan_domain() {
     local url="$1"
@@ -162,10 +180,10 @@ scan_domain() {
         [[ -z "$creation_date_msg" ]] && creation_date_msg=$(timeout 15 whois "$d" 2>/dev/null | awk -F: '/Creation Date:|Created On:|Registered On:/ {print $2; exit}' | xargs)
         [[ -z "$expiry_date_msg" ]] && expiry_date_msg=$(timeout 15 whois "$d" 2>/dev/null | awk -F: '/Expiry Date:|Expiration Date:|Registrar Registration Expiration Date:/ {print $2; exit}' | xargs)
         [[ -z "$registrar" ]] && registrar="REDACTED (registry privacy enforced)"
-        [[ -z "$creation_date_msg" ]] && creation_date_msg="not exposed / restricted"
-        [[ -z "$expiry_date_msg" ]] && expiry_date_msg="not exposed / restricted"
+        creation_date_human=$(format_date "$creation_date_msg")
+        expiry_date_human=$(format_date "$expiry_date_msg")
         printf "REGISTRAR: %s\nCREATION DATE: %s\nEXPIRY DATE: %s\n" \
-            "$registrar" "$creation_date_msg" "$expiry_date_msg" >"$rdap_tmp"
+            "$registrar" "$creation_date_human" "$expiry_date_human" >"$rdap_tmp"
     } &
     rdap_pid=$!
     spinner "$rdap_pid"
