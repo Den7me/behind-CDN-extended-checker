@@ -9,8 +9,6 @@
 [![Docker](https://img.shields.io/docker/v/den7me/behind-cdn-extended-checker?label=Docker%20Hub)](https://hub.docker.com/r/den7me/behind-cdn-extended-checker)
 <!-- GitHub Release Badge -->
 [![GitHub Release](https://img.shields.io/github/v/release/Den7me/behind-CDN-extended-checker?label=GitHub%20Release)](https://github.com/Den7me/behind-CDN-extended-checker/releases)
-<!-- Optional: GitHub Actions Build Badge -->
-[![Docker Build & Push](https://github.com/Den7me/behind-CDN-extended-checker/actions/workflows/docker-build.yml/badge.svg)](https://github.com/Den7me/behind-CDN-extended-checker/actions/workflows/docker-build.yml)
 
 A Bash script to check if a website is behind a CDN (Content Delivery Network) and retrieve origin server information. This script detects if a website is using popular CDNs such as Cloudflare, Akamai, Fastly, CloudFront, StackPath, KeyCDN, Incapsula, Google Cloud CDN, Azure CDN, BunnyCDN, CDN77, and CacheFly. It fetches IPv4 and IPv6 addresses, checks HTTP/HTTPS response codes directly and via origin, retrieves SSL certificate details (CN, SAN, issuer), shows hostname and organization info for the origin IP, and detects EPP domain status.
 
@@ -102,20 +100,19 @@ Then run:
 
     Run the checker with Docker without installing dependencies:
 
-```bash
-# Pull the image
+ Pull the image
     docker pull den7me/behind-cdn-extended-checker:2.0.1
 
-# Run the default scan
+ Run the default scan
     docker run --rm den7me/behind-cdn-extended-checker:2.0.1
 
-# Scan a custom domain
+ Scan a custom domain
     docker run --rm den7me/behind-cdn-extended-checker:2.0.1 https://example.com
 
-# Optional: start an interactive container for multiple checks
+ Optional: start an interactive container for multiple checks
     docker run -it den7me/behind-cdn-extended-checker:2.0.1 /bin/bash
 
-# Build the image locally from source
+ Build the image locally from source
     docker build -t den7me/behind-cdn-extended-checker:2.0.1 .
 
 
