@@ -95,7 +95,7 @@ Then run:
   
 ## Docker Usage
 
-### Run the checker with Docker without installing dependencies:
+Run the checker with Docker without installing dependencies:
 
 ### Pull the image
     docker pull den7me/behind-cdn-extended-checker:2.0.1
