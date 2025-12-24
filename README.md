@@ -95,21 +95,21 @@ Then run:
   
 ## Docker Usage
 
-Run the checker with Docker without installing dependencies:
+### Run the checker with Docker without installing dependencies:
 
-Pull the image
+### Pull the image
     docker pull den7me/behind-cdn-extended-checker:2.0.1
 
-Run the default scan
+### Run the default scan
     docker run --rm den7me/behind-cdn-extended-checker:2.0.1
 
-Scan a custom domain
+### Scan a custom domain
     docker run --rm den7me/behind-cdn-extended-checker:2.0.1 https://example.com
 
-Optional: start an interactive container for multiple checks
+### Optional: start an interactive container for multiple checks
     docker run -it den7me/behind-cdn-extended-checker:2.0.1 /bin/bash
 
-Build the image locally from source
+### Build the image locally from source
     docker build -t den7me/behind-cdn-extended-checker:2.0.1 .
 
 
