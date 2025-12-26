@@ -1,7 +1,7 @@
 # Behind-CDN Origin Checker
 
-![Bash](https://img.shields.io/badge/Bash-Yes-green)
-![License](https://img.shields.io/github/license/Den7me/behind-CDN-extended-checker)
+<!--![Bash](https://img.shields.io/badge/Bash-Yes-green)-->
+<!--![License](https://img.shields.io/github/license/Den7me/behind-CDN-extended-checker)-->
 ![Last Commit](https://img.shields.io/github/last-commit/Den7me/behind-CDN-extended-checker/main)
 [![Open in Gitpod](https://img.shields.io/badge/Open%20in-Gitpod-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Den7me/behind-CDN-extended-checker)
 [![Open in Codespaces](https://img.shields.io/badge/Open%20in-Codespaces-blue?logo=github)](https://github.com/codespaces/new?repo=Den7me/behind-CDN-extended-checker)
