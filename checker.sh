@@ -161,6 +161,12 @@ scan_domain() {
     printf "NS: %s\n" "${ns:-NONE}"
 
     # -------------------------
+    # MAIL EXCHANGERS (MX RECORDS)
+    # -------------------------
+    mx=$(dig +short MX "$d" | sort -n | awk '{print $2}' | tr '\n' ' ' | sed -e 's/[[:space:]]\+/ /g')
+    printf "MX: %s\n" "${mx:-NONE}"
+
+    # -------------------------
     # REGISTRAR / CREATION / EXPIRY (RDAP + WHOIS)
     # -------------------------
     rdap_tmp=$(mktemp)
