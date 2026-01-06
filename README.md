@@ -90,6 +90,7 @@ Then run:
       Org: Example Organization
 
     NS: ns1.example.com. ns2.example.com.
+    MX: mail.example.com.
     REGISTRAR: Example Registrar
     CREATION DATE: 2022-11-23
     EXPIRY DATE: 2026-11-23
