@@ -219,3 +219,4 @@ for url in "${urls[@]}"; do
     scan_domain "$url"
 done
 
+// release title fix
